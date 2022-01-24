@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "afce8bbf-af7f-4b5f-8135-43c6113a4bf0",
+		"name": "workout-logs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Log",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"log\": \n    {\n        \"description\": \"\",\n        \"definition\": \"\",\n        \"result\": \"\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:6000/log/"
+			},
+			"response": []
+		},
+		{
+			"name": "New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"user\": {\n        \"username\": \"\",\n        \"password\": \"\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:6000/user/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"username\": \"\",\n        \"password\": \"\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:6000/user/login"
+			},
+			"response": []
+		},
+		{
+			"name": "All Logs ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjQyOTg5OTI1LCJleHAiOjE2NDMwNzYzMjV9.uOGXa4vzvJu_D-kXdPXa6ljKQrakqexdMZXVQ1Q9Uzo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:6000/log/"
+			},
+			"response": []
+		},
+		{
+			"name": "Individual Logs by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:6000/log/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Deletes Individual Logs",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:6000/log/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Updates Logs",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"log\": \n    {\n        \"description\": \"Changing\",\n        \"definition\": \"Changed\",\n        \"result\": \"Hello\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:6000/log/1"
+			},
+			"response": []
+		}
+	]
+}
