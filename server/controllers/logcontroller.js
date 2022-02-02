@@ -10,7 +10,7 @@ router.post('/', validateJWT, async (req, res) => {
        description,
        definition,
        result,
-       owner: id
+       owner_id: id
    }
     try {
         const newLog = await LogModel.create(logEntry);
@@ -27,7 +27,7 @@ router.get('/', validateJWT, async (req, res) => {
     try {
         const userLogs = await LogModel.findAll({
             where: {
-                owner: id
+                owner_id: id
             }
         });
         res.status(200).json(userLogs);
@@ -75,7 +75,7 @@ router.delete('/:id', validateJWT, async (req, res) => {
         const query = {
             where: {
                 id: logId,
-                owner: ownerId
+                owner_id: ownerId
             }
         };
         await LogModel.destroy(query);
